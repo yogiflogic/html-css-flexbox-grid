@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat (3,130px );
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    /* kalau valuenya sama boleh tulis satu aja */
+    place-items: end  ;
+}
+
+.items{
+    border: 3px solid black;
+    height: 150px;
+    background-color: aquamarine;
+}
+
+.items.i1,
+.items.i4,
+.items.i7{
+    /* height: 130px; */
+}
+
+.items.i2,
+.items.i5,
+.items.i8{
+    /* height: 80px; */
+}
+
+.items.i3,
+.items.i6,
+.items.i9{
+    /* height: 170px; */
+}

@@ -1,0 +1,168 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: ddd;
+    line-height: 1.65;
+    padding-bottom: 500px;
+}
+ /* row 1 */
+.container-satu{
+    width: 800px;
+    margin: 80px auto;
+    background-color: cornsilk;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.kolom-utama{
+    flex: 3;
+    order: 2;
+}
+
+.sidebar-left{
+    flex: 1;
+    order: 1;
+}
+
+.sidebar-right{
+    flex: 1;
+    order: 3;
+}
+
+/* Row 2 */
+
+.container-dua{
+    max-width : 800px;
+    margin: 80px auto ;
+}
+
+.layanan{
+
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.layanan.satu{
+    background-color: burlywood;
+    transition: 1s ease;
+}
+
+.layanan.dua{
+    background-color: chartreuse;
+    transition: 1s ease ;
+}
+
+.layanan.tiga{
+    background-color: darkturquoise;
+    transition: 1s ease ;
+}
+
+.layanan.satu:hover{
+    transform: scale(1.2);
+    
+}
+.layanan.dua:hover{
+    transform: scale(1.2);
+}
+.layanan.tiga:hover{
+    transform: scale(1.2);
+}
+
+/* Galery */
+
+.container-tiga{
+    max-width: 800px;
+    margin: 50px auto;
+    flex-wrap: wrap; /* Agar gambar yang sudah terisi penuh di baris awal bisa otomatis ke bawah atau row selanjutnya dari maksimal container */
+    display: flex;
+    justify-content: center; /* untuk gambar rata tengah */
+}
+
+/* Agar banyaknya gambar (ukuran gambar) sesuai ukuran width containernya */
+.thumbnail{
+    width: 50%;
+}
+
+/* agar gambarnya sesuai ukuran maksimal containernya */
+.thumbnail img{
+    width: 100%;
+}
+
+/* part 4 */
+
+.container-empat{
+    width:800px;
+    margin: 50px auto;
+    display: flex;
+}
+
+.card{
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    background-color: gainsboro;
+    overflow: hidden;
+    margin: 10px;
+    flex: 1;
+}
+
+.card.big{
+    transform: scale(1.1);
+}
+
+.card .header{
+    height:150px;
+    background-color: aquamarine;
+}
+
+.card .content {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.container-lima{
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border: 5px solid black;
+    display: flex;
+}
+
+.kotak{
+width: 100px;
+height: 100px;
+color: white;
+background-color: deepskyblue;
+margin: auto; /* Berfungsi untuk meltekan kotak di tengah dengan tambahan DISPLAY : flex pada container-lima (clas induk) */
+display: flex;
+}
+
+.kotak span{
+    margin: auto;
+}
+
+
+
+/* respnsive */
+
+@media (min-width:600px){
+    .container-dua{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .layanan {
+        width: 30%;
+    }
+
+    .thumbnail{
+        width: 25%;
+    }
+}

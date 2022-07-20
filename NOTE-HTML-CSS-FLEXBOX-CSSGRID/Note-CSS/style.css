@@ -1,0 +1,269 @@
+/*
+CSS : - https://css-tricks.com/
+      - https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=id
+      - https://www.w3schools.com/colors/colors_picker.asp
+      - https://coolors.co/6837df
+      - https://imagecolorpicker.com/ (dengan gambar)
+      - https://cssscanpro.com/ (Copy elements with a single click)
+      
+CSS anatomy : selector{property: value};
+
+embed
+<style></style>
+
+inline
+<p style="color: lightblue";> </p>
+
+Eksternal
+<link rel="stylesheet" href="style.css">
+
+Psudo class :
+:link = style default pada sebuah link (a yang memiliki href)
+
+:hover = style ketika kursor mouse berada di atas sebuah link/element
+
+:active = style ketika sebuah link di klik (keadaan aktif)
+
+:visited = style ketika sebuah link sudah pernah di kunjungi sebelumnya (menggunakan browser yang sama)
+
+Specificity :
+    1       1   1       1 <--- hitung bobot dari kanan (seperti bilangan biner)
+- inline, id , class, element
+- https://specificity.keegan.st/ <-- kalkulator untuk menghitung bobot (Specificity)
+
+Properti display : INLINE berada di garis yang sama sedangkan BLOCK akan membuat baris baru
+
+CSS LAYOUT : - Display
+             - Dimensi = Width dan height
+             - Overflow = Mengatur perilaku element (visible, auto, hidden, scroll) visible = default, auto = menambahkan scroll jika isi konten melebihi dimensi yang di tetapkan
+             - Box Model
+             - Float
+             - Position
+
+Element yang bisa di atur ukurannya adalah element yang DISPLAY block
+
+CSS BOX MODEL terdiri dari MARGIN,BORDER,PADDING DAN CONTENT
+
+Overlapping margin Vertikal = Margin tidak saling menambahkan ketika bertemu (margin top dengan margin button (vertikal)) margin yang di ambil adalah margin yang paling besar ukurannya
+Overlapping margin Horinzontal = marginnya akan saling bertambah jika di beri value
+
+Margin bisa di beri value
+
+cara baca value shorthand:
+margin 2 value : value1 (atas bawah) value2(kiri kanan)
+margin 3 value : value1 (atas) value2(kiri kanan) value3 (bawah)
+margin 4 value : value1 (atas) value2(kanan) value3 (bawah) value4 (kiri) (di baca se arah jarum jam)
+
+PADDING :
+- Pading tidak bisa diberi Value negative Dan AUTO
+- Padding mempengaruhi ukuran BOX yang telah di buat sebelumnya
+
+Border :
+- Border mempengaruhi ukuran BOX yang telah di buat sebelumnya
+
+Box-Sizing:Border-box :
+- Mengatur dimensi dari BOX
+
+body {sesuaikan font keseluruhan sesuai standard atau ke inginan}
+
+CSS RESET :
+
+* {
+    margin:0;
+    padding:0;
+}
+
+atau search CSS RESET (https://meyerweb.com/eric/tools/css/reset/)
+
+background-size: cover; = mengatur posisi gambar
+background-position: horizontal vertical;
+background-position: 50 50;
+
+float : biasanya di gunakan untuk gambar yang ada text
+img{
+    float:right;
+    atau
+    float:left;
+}
+
+clear : berfungsi untuk membersihkan property float yang telah kita buat
+value -> left right, jika ingin memakai ke duanya pakai value BOTH
+
+Buat dengan class dan div kosong (tergantung kebutuhan)
+
+Teknik yang lebih baik search micro clearfix (http://nicolasgallagher.com/micro-clearfix-hack/)
+
+FONT :
+font: value/line height nama font;
+font : 15px/15px arial
+
+jika tidak memberi nama font (arial) property tidak akan berfungsi
+
+Tempat membuat object 3 dimensi https://www.tinkercad.com/
+
+CSS Position : value static (default)
+- relative (relative terhadap posisi semula/ ruang tempat object berada sebelumnya msh ada),
+- absolute (ruang tempat object berada sebelumnya di anggap tidak ada dan relative terhadap posisi parentnya/ posisi setelah di pakai value absolute/parent terhadap tag HTMLnya/parent terdekat, beri value non-static/relative di parennya agar tidak keluar dari parent terdekat(container/element lainya) atau ketika memberi value dengan nilai 0(nol) pada objeck absolute awal),
+- fixed (Relative bergerak terhadap window browser meskipun parentnya non-static)
+
+z-index = smengatur tumpukan terhadap elemen yang non_static
+text-indent: value; = penggunaanya mirip z-index tapi untuk text
+
+CSS3 :
+www.quackit.com/css/css3/properties
+
+cara agar Text berada di tengah kotak samakan value Height dengan line-height
+
+height :300px;
+line-height :300px;
+
+Overflow:hidden -> berfungsi untuk menyatukan elemen HTML seperi gambar ke dalam CSS propertinya
+
+background-color: rgba(value1, value2, value3, transparansi)
+background-color: hsla(value1, value2, value3, transparansi)
+
+box-shadow : x-offset y-offset blur color/rgba()
+box-shadow : 5px 5px 5px black
+
+                                    spred-> opsional
+box-shadow : x-offset y-offset blur spred color/rgba()
+box-shadow : 5px 5px 5px 5px black
+
+            inset-> optional -> bayang kedalam
+box-shadow : inset x-offset y-offset blur spred color/rgba()
+box-shadow : inset 5px 5px 5px 5px black
+
+box shadow bisa multiple:
+box-shadow : inset 5px 5px 5px 5px black,
+             inset 5px 5px 5px 5px black,
+             inset 5px 5px 5px 5px black,
+             inset 5px 5px 5px 5px black;
+
+Linear merupakan property namun value dari background-image / background :
+
+Liner-gradient : memberikan warna secara garis lurus
+
+multiple warna :
+background-image: linear-gradient(warna 1,...,..., warna n);
+syntax lengkap:
+background-image: linear-gradient(arah | sudut,warna awal (option color stop(10%) ),..., warna akhir(option color stop(10%) ));
+
+Radial-gradient: memberikan warna secara melingkar
+syntax lengkap:
+Liner-gradient(
+    <tipe(circle)> , <jangkauan(closest-side, farthest-side farthest-corner, closest-corner)> at <posisi-y (top , center , buttom px)> <posisi-x (top , center , buttom px)>
+    warna 1 ,... ,..., warna-N
+);
+
+Font Face:
+@font-face{
+    font-family:'nama font baru';
+    src: url() format();
+
+}
+
+Vendor Prefixes/awalan : Digunakan agar CSS kompetibel di semua browser (sintaks khusus yang harus di tambahakan ke beberapa property CSS)
+
+vendor prefix : digunakan agar css3 bisa di baca pada hampir semua browser
+-webkit- (property css) = (chrome, safari, opera versi terbaru)
+-moz- (property css) = (firefox)
+-ie- (property css) = (IE)
+-o- (property css) = (Opera Versi Lama)
+
+prefix css generator | Css auto prefix
+Property CSS yang harus di beri prefix :
+- shouldiprefix.com 
+- pleeease.io/play
+- http://pleeease.iamvdo.me/play/
+- https://tools.webdevpuneet.com/css-autoprefixer/ (aktif)
+
+img:hover{
+    filter:value;
+}
+
+filter : value
+CSS Filter Efect (http://html5-demos.appspot.com/static/css/filters/index.html)
+
+Transform memanipulasi format visual pada HTML:
+Tansform : <fungsi>
+- scale(value-X,value-Y) | scaleX() | scaleY() : memperbesar/memperkecil
+-  rotate(45deg) | roatateX | rotateY : memutar object
+- skew(30deg) |skewX() | skewY() : membuat condong / miring
+- translate(50px,100px)  |translateX(50px) | translateY(100px) : mengubah posisi
+
+-Transition-
+Transition : memungkinkan kita dapat mengubah nilai property HTML secara HALUS,
+bedanya dengan ANIMATION adalah keadaan awal dan keadaan akhir(@key-frame)
+Transition : <durasi(wajib di isi s/ms)> [fungsi][delay (s/ms)]
+
+SIMPAN selalu keadaan TRANSITION di keadaan awal
+
+all adalah nilai default jika tidak di beri pun otomatis akan di beri value all,
+tetapi bisa di ganti dengan value lain seperti : margin-left dll
+Transition: all 1s ease-in
+
+Timing Function :
+- ease (value default)
+- ease-in
+- ease-out
+- ease-in-out
+- linear
+- cubic-bezier(w,x,y,z)
+
+animation :
+animation : value -> 
+- [nama di keyframe (wajib)]
+- [durasi (angka)] = angka dalam detik (s)
+- [timing function] = value yang ada di TRANSITION
+- [delay] = angka
+- [iteration-count(angka)] = angka | infinite
+- [direction] = normal | reverse | alternate | alternate-reverse 
+- [fill-mode] = none | forwards | backforwards | both
+- [play-state] = running | paused
+
+@keyframes [name(nama bebas)]] {
+    from (bisa dengan persen keadan awal) {
+        [property-css]
+        width : 200;
+    }
+
+    to (bisa dengan persen keadaan akhir) {
+        [property-css]
+        width : 200;
+    }
+}
+
+Untuk Website Responsive :
+@media query : berfungsi untuk membuat tampilan website menjadi responsive sesuai device yang mengakses
+
+CSS TRICK : 
+
+clip-path: inset | circle | ellipse | polygon
+referensi untuk membuat value dari POLYGON (https://bennettfeely.com/clippy/)
+
+mask: (gambarnya pakai yang format svg)
+shape-inside : 
+shape-outside :
+text-stroke: 
+background-blend-mode: ;
+   mix-blend-mode: ;
+*/
+
+/* Animatable Properties
+=============================
+
+background-color
+background-position
+background-size
+border
+color
+fliter
+font-size
+line-height
+top left bottom right
+margin padding
+width height
+opacity
+transform
+word-spacing
+letter-spacing */

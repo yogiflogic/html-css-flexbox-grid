@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;;
+}
+
+body{
+    color:aquamarine;
+    text-align: center;
+    margin: 30px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.galery{
+    width: 80%;
+    margin: 20px auto;
+    border: 10px solid wheat;
+    list-style: none;
+    box-shadow: 2px 2px 2px rgb(0, 0,0,0.5);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+    grid-gap: 3px;
+}

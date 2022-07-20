@@ -1,0 +1,47 @@
+body,html{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* column-gap: 10px;
+    row-gap: 10px; */
+    /* row dan column sekaligus (versi lama) */
+    /* grid-gap: 10px; */
+    /* versi baru */
+    gap: 10px;
+}
+
+.item{
+    width: 100%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 100px;
+
+}
+
+.item:nth-child(even){
+    background-color: deepskyblue;
+} 
+
+
+
+/* respnsive break point */
+
+/* @media screen and (min-width:576px) {
+    .container{
+        grid-template-areas:
+        'header header header'
+        'sidebar content content'
+        'sidebar content content'
+        'footer footer footer' ;
+    }
+    
+} */

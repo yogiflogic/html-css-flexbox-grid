@@ -1,0 +1,132 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container{
+   width: 70%;
+   margin: auto;
+   padding: 10px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color:aquamarine;
+   Box-Sizing:Border-box;
+}
+
+
+nav ul{
+   width: 100%;
+   background-color:aquamarine;
+   padding: 10px;
+   margin-top: 0;
+   border-bottom: 2px solid black;
+   position: fixed;
+}
+
+nav li{
+   display: inline-block;
+   margin: 5px;
+   padding: 10px;
+   background-color: honeydew;
+   text-decoration: none;
+   border-radius: 2;
+   text-align: justify;
+   position: relative;
+}
+
+nav ul li a{
+   text-decoration: none;
+   z-index: 9999;
+}
+
+nav ul li a:hover{
+   background-color: chartreuse;
+}
+
+ #sidebar{
+    background-color: aquamarine;
+    width: 14%;
+    height: 100%;
+    position: fixed;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    margin-top: 70px ;
+ }
+
+ #sidebarright{
+   background-color: aquamarine;
+   width: 12%;
+   height: 100%;
+   position: fixed;
+   padding: 5px;
+   top: 0;
+   right: 0;
+   margin-top: 70px ;
+}
+
+ #content{
+  margin-top: 70px;
+  float: left;
+  width: 72%;
+  margin-left: 200px;
+  background: coral;
+  
+  padding: 0px 10px;
+ }
+
+ ul{
+     background: rgb(255, 255, 255);
+    padding: 5px;
+ }
+
+ ul li{
+    list-style-type: none;
+    border-bottom: 1px solid #F5EDF0;
+ }
+
+ ul li a{
+    text-decoration: none
+ }
+
+ 

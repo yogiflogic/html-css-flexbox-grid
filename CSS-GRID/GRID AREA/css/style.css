@@ -1,0 +1,89 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container{
+    width: 600px;
+    height: 50px auto;
+    margin: auto;
+    border: 5px solid #333;
+    box-sizing: border-box;
+    padding: 5px;
+    /* Grid Container */
+    display: grid;
+    /* memberi nama row */
+    grid-template-areas: "header header"
+                         "aside main"
+                         "nav main"
+                         "footer footer";
+    /* mengatur ukuran column (fr = fraction) */
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1.3fr;
+}
+
+header{
+    /* pemberian nama yang di ambil dari properti (grid-template-areas) pada class container  */
+    grid-area: header;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+aside{
+    grid-area: aside;
+    background-color: darkcyan;
+    padding: 60px 0;
+}
+
+nav{
+    grid-area: nav;
+    background-color: deepskyblue;
+    padding: 100px 0;
+}
+
+main {
+    grid-area: main;
+    background-color: darksalmon;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1.5;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    grid-area: footer;
+    background-color: black;
+    padding: 20px 0;
+}
+
+/* coloumn & rows */
+
+.container2{
+    width: 60%;
+    height: 100%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 25% 50% 10%;
+    grid-template-rows: 50px 150px 100px;
+}
+
+.item{
+    background-color: dodgerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.item:nth-child(even){
+    background-color: greenyellow;
+}

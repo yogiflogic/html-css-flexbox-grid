@@ -1,0 +1,194 @@
+/* CSS GRID :
+CSS GRID -> Modul CSS baru untuk mendefinisikan sistem layout berbentuk GRID dalam 2 Dimensi (kolom & layout)
+.container{
+    display : grid | inline-grid;
+}
+
+- Grid Container -> Element pembungkus grid, di definisikan dengan (display: grid)
+- Grid Item -> Element yang berada 1 level di dalam grid container
+- Grid line -> Garis horizontal (kolom) dan Veritikal (baris) yang memisahkan grid menjadi beberapa bagian dan di tandai dengan angka
+- Grid cell -> perpotongan antara baris dan kolom di dalam grid
+- Grid area -> kumpulan lebih dari satu cell yang membentuk kotak
+- Grid track -> ukuran atau jarak antara 2 grid line bisa horizontal atau vertikal
+- Grid gap -> Jarak antara grid track / cell
+
+cek di inspek element mozila:
+- Garis solid = Eksplisit
+- Garis putus-putus (horizontal) = Eksplisit item / Eksplisit track
+- Garis titik-titik = Impliciti item / Impliciti track
+
+Property otomatis yang membantu ketika row dan column tidak di tentukan secara Eksplisit item / Eksplisit track :
+- grid-auto-columns: auto|px;
+- grid-auto-rows: auto|px; 
+-> mengatur ukuran grid track yang tidak di tuliskan pada grid template (implicit-track)
+- grid-auto-flow->mengatur penempatan item / cell pada grid track, termasuk yang di tulis secara implicit
+
+grid-auto-flow : row|column|row dense|column dense
+
+- fr (fraction) -> satuan yang menghitung total semua value yang di berikan dan membagi rata sesuai ketentuan containernya,
+  jika ada value dengan satuan fix, maka yang fix akan di hitung dulu kemudian baru di sesuaikan dengan fr dan ukuran containernya
+
+property:
+grid-template-columns: ;
+grid-template-rows: ;
+defenisi -> Mendefenisikan kolom/baris dengan cara menuliskan nilai di pisahkan oleh spasi,
+nilai mempresentasikan ukuran grid track dan spasi mempresentasikan grid line
+
+eksplisit & implicit menit 8 ulang nanti
+eksplisit -> ketika kita secara jelas menuliskan ukuram gridnya (kolom dan baris)
+implisit ->  ketika gridnya menentukan secara otomatis sisa dari kolom dan baris yang tidak kita tentukan secara eksplisit
+
+Special function & keyword :
+
+repeat():
+-> Untuk menentukan ukuran grid track secara berulang
+
+max-content | min-content:
+-> menentukan seberapa besar ukuran grid track berdasarkan content pada sebuah item
+
+value-> repeat(auto-fill) | repeat(auto-fit) :
+-> menentukan jumlah item untuk berada pada grid track;
+
+min-max(200px,300px) 
+-> menentukan ukuran minimal dan maksimal dari grid track
+
+grid-template-columns: repeat(4.1fr) repeat(5.1.5fr) | max-content | min-content |;
+
+grid-template-areas:
+-> Medefinisikan grid template menggunakan nama dan area yang di tulis dalam property grid-area pada item
+
+grid-template :
+-> shorthand untuk mendefinisikan grid-template-rows dalam, grid-template-areas dan grid-template-columns satu deklarasi
+    
+grid-template: <grid-template-rows> | <grid-template-areas> / <grid-template-columns> ;
+
+Grid Gap :
+grid-column-gap: <line-size> & grid-row-gap: <line-size> (versi lama)
+row-gap: <line-size> & column-gap: <line-size> (versi baru)
+
+shorthand untuk mendifinisikan row-gap dan column-gap sekaligus :
+grid-gap: <line-size>; (versi lama)
+gap: <line-size> (versi baru)
+
+grid :
+-> shorthand untuk mendefinisikan property berikut dalam satu deklarasi/ sekaligus :
+    grid-template-rows:;
+    grid-template-columns: ;
+    grid-template-areas: ;
+    grid-auto-rows: ;
+    grid-auto-columns: ;
+    grid-auto-flow: ;
+
+Grid alignment untuk memposisikan elemen-element grid dalam container:
+    justify-items: start|end|center|stretch (default) ; -> Mensejajarkan grid items pada sumbu horizontal
+    align-items: start|end|center|stretch (default)   ; -> mensejajarkan grid-items pada sumbu vertikal
+    place-items: <align-items> <jutify-items>; ->shorthand untuk menulis justify-items & align-items dalam satu deklarasi
+    justify-content: start|end|center|stretch |space-around|space-between|space-evenly ; -> Mengatur posisi seluruh grid container pada sumbu horizontal , ini bisa di lakukan ketka ukuran total grid lebih kecil dari ukuran containernya, biasanya ketika grid itemsnya menggunakan ukuran yang fixed (px)
+    align-content: start|end|center|stretch |space-around|space-between|space-evenly ; -> sama seperti justify content. tapi untuk sumbu vertikal
+    place-content: <justify-content> <align-content> ; -> shorthand untuk menulis justify content dan align content dalam satu deklarasi
+
+ grid-column-start: & grid-column-end:
+grid-row-start & grid-row-end:
+-> Menentukan tempat dari grid item yang dengan mengacu pada nomor atau nama grid line yang spesifik
+
+grid-column-start: <nomor>|<nama>|span<nomor>|span<nama>|auto;
+grid-column-end: <nomor>|<nama>|span<nomor>|span<nama>|auto;
+grid-row-start: <nomor>|<nama>|span<nomor>|span<nama>|auto;
+grid-row-end: <nomor>|<nama>|span<nomor>|span<nama>|auto;
+
+Ket :
+<nomor>|<nama> : mengacu pada nama atau nomor yang kita beri pada grid line
+span <nomor> : item akan memanjang / melebar sampai sejumlah nomor 
+span <nama> : item akan memanjang / melebar sampai ke nama grid line tertentu
+
+grid-column: & grid-row:
+-> shorthand untuk start & end pada grid column & grid row
+
+grid-column: <start-line> / <end-line> / span <value> ;
+grid-row: <start-line> / <end-line> / span <value> ;
+
+grid-area:
+-> menentukan nama area pada item susuai dengan template yang sudah di buat sebelumnya melalui property grid template areas
+
+bisa digunakan sebagai shorthand untuk grid-column start, grid-coloumn-end , grid-row-start dan grid-row-end  dalam satu deklarasi sekaligus
+
+grid-area shorthand:
+grid-area: <name> | <row-start> / <column-start> /<row-end> / <column-end>;
+
+justify-self:
+-> mengatur posisi item pada sebuah cell tehadap sumbu horizontal
+
+justify-self: start|end|center|stretch (default) ;
+
+align-self:
+-> Mengatur posisi item pada sebuah cell terhadap sumbu vertikal
+
+align-self: start|end|center|stretch (default) 
+
+place-self:
+-> Shorthand posisi item pada sebuah cell terhadap sumbu vertikal dan horizontal dalam satu deklarasi / sekaligus
+
+place-self: <align-self> <justify-self> ;
+
+JUSTIFY = HORIZONTAL
+ALIGN = VERTICAL
+PLACE = VERTICAL & HORIZONTAL */
+
+/* CONTAINER
+========================
+grid-template-columns
+grid-template-rows
+grid-auto-rows
+grid-auto-flow
+grid-template-areas
+grid-column-gap
+grid-row-gap
+grid-gap
+grid
+juftify-items
+align-items
+place-items
+align-content
+place-content
+
+ITEM
+======================
+grid-column-start
+grid-column-end
+grid-row-start
+grid-row-end
+grid-column
+grid-row
+grid-area
+justify-self
+align-self
+place-self */
+
+/* Property Untuk Mengatur Basir Dan Kolom
+===============================================
+grid-template-columns
+grid-template-rows
+grid-auto-columns
+grid-auto-rows
+grid-auto-flow
+grid-template-areas
+grid-template
+grid-column-gap
+grid-row-gap
+grid-gap
+grid
+
+justyfy-items
+align-items
+place-items
+justify-content
+align-content
+place-content */
+
+/* Special Function & Keyword
+===========================
+
+repeat()
+min-content & max-content
+minmax()
+auto-fill & auto-fit */

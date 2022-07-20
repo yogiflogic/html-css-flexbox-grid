@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: darkseagreen;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat (3,130px );
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    /* untuk 'start' membuat element berda di sebelah kiri,'end' kanan dan 'center' tengah, lebar dari kolomnya akan menyesuaikan contentnya  */
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: center; */
+    /* default = stretch */
+    /* justify-content: stretch; */
+    /* justify-content:space-around ; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+    
+}
+
+.items{
+    width: 100px;
+    border: 3px solid black;
+    height: 50px;
+    background-color: aquamarine;
+    justify-content: end;
+}
