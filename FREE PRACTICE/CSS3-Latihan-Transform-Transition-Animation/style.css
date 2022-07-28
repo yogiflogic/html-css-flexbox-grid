@@ -1,0 +1,54 @@
+.container{
+    width: auto;
+    height: auto;
+    border: 3px solid salmon;
+}
+
+.container:hover .kotak1{
+    transform: rotate(720deg);
+    /* peran margin-left bisa menggeser kotaknya */
+    margin-left: 800px;
+}
+
+.container:hover .kotak2{
+    transform: rotate(720deg);
+    /* peran margin-left bisa menggeser kotaknya */
+    margin-left: 800px;
+}
+
+.container:hover .kotak3{
+    transform: rotate(720deg);
+    /* peran margin-left bisa menggeser kotaknya */
+    margin-left: 800px;
+}
+
+.kotak1{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: rgb(118, 221, 118);
+    margin: 5px;
+    transition: all 1s ease;
+}
+
+.kotak2{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: rgb(37, 223, 236);
+    margin: 5px;
+    transition: all 1s ease-out;
+}
+
+.kotak3{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 14px;
+    background-color: rgb(179, 228, 44);
+    margin: 5px;
+    transition: all 1s ease-in-out;
+}
